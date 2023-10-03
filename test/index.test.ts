@@ -7,16 +7,15 @@ const wg = createTestAndMockServer({ fetch: fetch as any });
 beforeAll(() => wg.start({ mockURLEnvs: ['WIZ'] }));
 afterAll(() => wg.stop());
 
-const mockResponse: TsTsopResponseData = {
-  wizards: [
+const mockResponse: TsTsopResponseData['wizards'] =
+  [
     {
       firstName: 'Mocked Tom',
       lastName: 'Mocked Riddle',
       elixirs: [],
       id: 'foo',
     },
-  ],
-};
+  ];
 
 describe('smart', () => {
   test.only('should work', async () => {
@@ -28,11 +27,7 @@ describe('smart', () => {
         console.log('mocking w/', mockResponse);
         return {
           status: 200,
-          body: {
-            wizGood_getWizards: {
-              data: mockResponse,
-            },
-          },
+          body: mockResponse,
         };
       },
     });
@@ -46,6 +41,6 @@ describe('smart', () => {
 
     scope.done();
 
-    expect(result.data).toEqual(mockResponse);
+    expect(result.data?.wizards).toEqual(mockResponse);
   });
 });
