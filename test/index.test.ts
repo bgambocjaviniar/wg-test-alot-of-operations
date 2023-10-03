@@ -29,7 +29,9 @@ describe('smart', () => {
         return {
           status: 200,
           body: {
-            data: mockResponse,
+            wizGood_getWizards: {
+              data: mockResponse,
+            },
           },
         };
       },
