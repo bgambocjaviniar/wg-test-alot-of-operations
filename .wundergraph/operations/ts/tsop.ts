@@ -5,8 +5,6 @@ export default createOperation.query({
     id: z.string(),
   }),
   handler: async ({ input, operations }) => {
-    console.log('input', { input });
-
     const result = await operations.query({
       operationName: 'wizGood/GetWizards',
       input: {
@@ -15,7 +13,11 @@ export default createOperation.query({
       },
     });
 
-    console.log('TS op result: ', result.data?.wizGood_getWizards);
+    if (result.error) {
+      return {
+        foo: 'error',
+      };
+    }
 
     return {
       wizards: result.data?.wizGood_getWizards ?? [],
