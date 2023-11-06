@@ -3,7 +3,7 @@ import type { TsTsopResponseData } from '../.wundergraph/generated/models';
 import { createTestAndMockServer } from '../.wundergraph/generated/testing';
 
 const wg = createTestAndMockServer();
-beforeAll(async () => wg.start({ mockURLEnvs: ['WIZ'] }), 20000);
+beforeAll(async () => wg.start({ mockURLEnvs: ['WIZ', 'ABC'] }), 20000);
 afterAll(() => wg.stop());
 
 describe('smart', () => {
