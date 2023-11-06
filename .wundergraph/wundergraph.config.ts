@@ -21,7 +21,7 @@ const abc = introspect.openApiV2({
   apiNamespace: 'abc',
   source: {
     kind: 'file',
-    filePath: './schema/abc.json',
+    filePath: './schema/abc.yaml',
   },
   baseURL: new EnvironmentVariable('ABC'),
   // statusCodeUnions: true,
