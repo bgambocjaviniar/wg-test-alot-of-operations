@@ -14,5 +14,6 @@ The test fails because the mocked response is not being returned from the typesc
 
 1. git clone the repo
 2. `npm ci` - install dependencies
-3. `npm run build` - cleans and generates wundergraph files
-4. `npm run test` - runs the tests (it also builds to make sure the generated files are up to date)
+3. add the yaml file as explained to .wundergraph/schema, and call it `abc.yaml`
+4. `npm run build` - cleans and generates wundergraph files
+5. `npm run test` - runs the tests (it also builds to make sure the generated files are up to date)
