@@ -1,10 +1,9 @@
 import { afterAll, beforeAll, describe, expect, test } from '@jest/globals';
-import fetch from 'node-fetch';
 import type { TsTsopResponseData } from '../.wundergraph/generated/models';
 import { createTestAndMockServer } from '../.wundergraph/generated/testing';
 
-const wg = createTestAndMockServer({ fetch: fetch as any });
-beforeAll(() => wg.start({ mockURLEnvs: ['WIZ'] }));
+const wg = createTestAndMockServer();
+beforeAll(async () => wg.start({ mockURLEnvs: ['WIZ'] }), 20000);
 afterAll(() => wg.stop());
 
 describe('smart', () => {
