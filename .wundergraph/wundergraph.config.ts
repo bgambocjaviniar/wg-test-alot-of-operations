@@ -17,15 +17,25 @@ const wizGood = introspect.openApiV2({
   // statusCodeUnions: true,
 });
 
+const abc = introspect.openApiV2({
+  apiNamespace: 'abc',
+  source: {
+    kind: 'file',
+    filePath: './schema/abc.json',
+  },
+  baseURL: new EnvironmentVariable('ABC'),
+  // statusCodeUnions: true,
+});
+
 // configureWunderGraph emits the configuration
 configureWunderGraphApplication({
-  apis: [wizGood],
+  apis: [wizGood, abc],
   server,
   operations,
   generate: {
     codeGenerators: [],
     operationsGenerator: (config) => {
-      config.includeNamespaces('wizGood');
+      config.includeNamespaces('wizGood', 'abc');
     },
   },
   experimental: {
