@@ -6,21 +6,15 @@ export default createOperation.query({
   }),
   handler: async ({ input, operations }) => {
     const result = await operations.query({
-      operationName: 'wizGood/GetWizards',
+      operationName: 'wizGood/Wizards',
       input: {
         FirstName: 'Tom',
         LastName: 'Riddle',
       },
     });
 
-    if (result.error) {
-      return {
-        foo: 'error',
-      };
-    }
-
     return {
-      wizards: result.data?.wizGood_getWizards ?? [],
+      wizards: result.data?.wizGood_Wizards ?? [],
     };
   },
 });

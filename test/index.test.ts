@@ -39,33 +39,4 @@ describe('smart', () => {
 
     expect(result.data?.wizards).toEqual(mockResponse);
   });
-
-  test('should test error', async () => {
-    const mockError = {
-      myError: 'invalid params',
-    };
-
-    const scope = wg.mockServer.mock({
-      match: ({ url, method }) =>
-        method === 'GET' &&
-        url.path === '/Wizards?FirstName=Tom&LastName=Riddle',
-      handler: ({}) => ({
-        status: 400,
-        body: mockError,
-      }),
-    });
-
-    const result = await wg.testServer.client().query({
-      operationName: 'ts/tsop',
-      input: {
-        id: 'whatever',
-      },
-    });
-
-    scope.done();
-
-    expect(result.data?.wizards).toEqual({
-      foo: 'error',
-    });
-  });
 });

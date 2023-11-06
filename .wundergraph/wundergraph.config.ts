@@ -7,16 +7,13 @@ import {
 import operations from './wundergraph.operations';
 import server from './wundergraph.server';
 
-const wizGood = introspect.openApi({
+const wizGood = introspect.openApiV2({
   apiNamespace: 'wizGood',
   source: {
     kind: 'file',
     filePath: './schema/swagger.json',
   },
-  baseURL: new EnvironmentVariable(
-    'WIZ',
-    'https://wizard-world-api.herokuapp.com/'
-  ),
+  baseURL: new EnvironmentVariable('WIZ'),
   // statusCodeUnions: true,
 });
 

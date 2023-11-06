@@ -11,9 +11,7 @@
   "paths": {
     "/Elixirs": {
       "get": {
-        "tags": [
-          "Elixirs"
-        ],
+        "tags": ["Elixirs"],
         "parameters": [
           {
             "name": "Name",
@@ -86,9 +84,7 @@
     },
     "/Elixirs/{id}": {
       "get": {
-        "tags": [
-          "Elixirs"
-        ],
+        "tags": ["Elixirs"],
         "parameters": [
           {
             "name": "id",
@@ -126,9 +122,7 @@
     },
     "/Ingredients": {
       "get": {
-        "tags": [
-          "Ingredients"
-        ],
+        "tags": ["Ingredients"],
         "parameters": [
           {
             "name": "Name",
@@ -173,9 +167,7 @@
     },
     "/Ingredients/{id}": {
       "get": {
-        "tags": [
-          "Ingredients"
-        ],
+        "tags": ["Ingredients"],
         "parameters": [
           {
             "name": "id",
@@ -213,9 +205,7 @@
     },
     "/Spells": {
       "get": {
-        "tags": [
-          "Spells"
-        ],
+        "tags": ["Spells"],
         "parameters": [
           {
             "name": "Name",
@@ -274,9 +264,7 @@
     },
     "/Spells/{id}": {
       "get": {
-        "tags": [
-          "Spells"
-        ],
+        "tags": ["Spells"],
         "parameters": [
           {
             "name": "id",
@@ -314,9 +302,7 @@
     },
     "/Wizards": {
       "get": {
-        "tags": [
-          "Wizards"
-        ],
+        "tags": ["Wizards"],
         "parameters": [
           {
             "name": "FirstName",
@@ -368,9 +354,7 @@
     },
     "/Wizards/{id}": {
       "get": {
-        "tags": [
-          "Wizards"
-        ],
+        "tags": ["Wizards"],
         "parameters": [
           {
             "name": "id",
@@ -490,12 +474,7 @@
         "additionalProperties": false
       },
       "FeedbackType": {
-        "enum": [
-          "General",
-          "Bug",
-          "DataError",
-          "Suggestion"
-        ],
+        "enum": ["General", "Bug", "DataError", "Suggestion"],
         "type": "string"
       },
       "GetHousesQuery": {
@@ -750,8 +729,7 @@
             "nullable": true
           },
           "id": {
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
           },
           "firstName": {
             "type": "string",
